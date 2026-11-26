@@ -1,0 +1,22 @@
+services:
+  # Monolithic API Backend
+  - type: web
+    name: grocery-backend
+    env: node
+    plan: free
+    rootDir: .
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: PORT
+        value: 4000
+      - key: JWT_SECRET
+        sync: false
+      - key: MONGO_URI
+        sync: false
+      - key: COULD_NAME
+        sync: false
+      - key: COULD_API_KEY
+        sync: false
+      - key: COUlD_SECRET
+        sync: false
